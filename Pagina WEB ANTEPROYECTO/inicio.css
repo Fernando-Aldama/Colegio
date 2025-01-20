@@ -1,0 +1,293 @@
+/* Estilos generales (se mantiene igual) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Cabecera */
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 248, 239); /* Fondo sin color */
+    padding: 20px 0;
+    width: 100%;
+}
+
+.cabecera_contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cabecera_logo {
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cabecera_titulo {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Navegación */
+.navegacion {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    background-color: rgba(139, 1, 1, 0.9); /* Color vino */
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: rgb(246, 246, 245);
+    font-size: 19px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color 0.7s ease, color 0.6s ease;
+}
+.navegacion a:hover {
+    background-color: rgb(255, 248, 239);
+    color: #800000;
+}
+
+/* Sección de imágenes con texto */
+.imagenes_texto {
+    display: flex;
+    justify-content: space-between; /* Espacio uniforme entre imágenes */
+    align-items: center;
+    margin: 20px auto;
+    width: 75%; /* Ajustar al 80% del ancho del contenedor */
+    gap: 15px; /* Espacio entre las imágenes */
+}
+
+.imagen_con_texto {
+    position: relative;
+    width: 23%; /* Cada imagen ocupa aproximadamente un cuarto del ancho */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.imagen_con_texto img {
+    width: 100%;
+    max-height: 100%;
+    height: 350px;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Main */
+.main {
+    background-color: rgb(255, 252, 246);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Ajusta la altura para incluir el footer */
+}
+
+.baner {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 100%; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra la caja si es más pequeña que el contenedor */
+    height: auto;
+    max-height: 100%;
+    background-color: #ebeaea;
+    padding: 20px;
+}
+
+.baner .text {
+    padding: auto;
+    word-wrap: break-word; /* Rompe palabras largas */
+    overflow-wrap: break-word; /* Recomendado para navegadores modernos */
+    line-height: 1.6; /* Mejora la legibilidad */
+    font-size: 20px; /* Tamaño de fuente ajustable */
+    font-weight: bold;
+    color: #800000;
+}
+
+
+/* Imágenes en 2x2 */
+.imagenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.imagen_item {
+    text-align: center;
+}
+
+.imagen_item img {
+    width: 100%;
+    height: 450px;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(251, 251, 250);
+}
+.footer .footer_text {
+    background-color: rgba(139, 1, 1, 0.9); /* Color vino */
+    color: rgb(255, 244, 232);
+    font-size: 20px;
+    padding: 15px;
+}
+
+.redes_sociales {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes_sociales img {
+    width: 28px;
+    height: 30px;
+    margin: 5px;
+}
+.redes_sociales img:hover {
+    width: 30px;
+    border-radius: 20px;
+    background-color: #f8c1c1;
+    
+
+}
+/*MAPA GOOGLE MAPS*/
+.mapita {
+    padding-top: 30px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map {
+    width: 70%;
+}
+
+/* --- Responsividad --- */
+
+/* Para pantallas de hasta 768px (tablets y móviles en orientación horizontal) */
+@media (max-width: 768px) {
+    .cabecera {
+        flex-direction: column;
+    }
+
+    .navegacion {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .imagenes_texto {
+        flex-wrap: wrap;
+    }
+
+    .imagen_con_texto {
+        width: 48%; /* Ajustar dos por fila */
+    }
+
+    .imagenes {
+        grid-template-columns: repeat(1, 1fr); /* Una sola columna */
+    }
+}
+
+/* Para pantallas de hasta 480px (móviles pequeños) */
+@media (max-width: 480px) {
+    .cabecera_logo {
+        height: 60px;
+    }
+
+    .cabecera_titulo {
+        font-size: 18px;
+    }
+
+    .navegacion a {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
+    .baner {
+        width: 100%; /* Ocupa el ancho completo */
+    }
+
+    .imagen_con_texto {
+        width: 100%; /* Una por fila */
+    }
+
+    .imagenes {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+}
+@media (max-width: 480px) {
+    .p {
+        font-size: 14px; /* Reduce ligeramente el tamaño del texto */
+        padding: 8px;
+    }
+}
+@media (max-width: 780px) {
+    .p {
+        font-size: 14px; /* Reduce ligeramente el tamaño del texto */
+        padding: 8px;
+    }
+}
+
+/*                links dentro de los botones       */
+  .dropdown{
+    margin-top: 10px;
+    position: relative;
+
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(54, 53, 53, 0.8);
+    min-width: 100%;
+    max-width: 100%;
+    box-shadow: 0px 8px 16px rgba(46, 46, 46, 0.8);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 5px;
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste para centrar */
+    padding: auto;
+  }
+  .dropdown-content a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+  }
+  
+  .dropdown-content, a:hover {
+    color: #e4aaaa;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

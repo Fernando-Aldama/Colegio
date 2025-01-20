@@ -1,0 +1,270 @@
+/* Estilos generales (se mantiene igual) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Cabecera */
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 248, 239); /* Fondo sin color */
+    padding: 20px 0;
+    width: 100%;
+}
+
+.cabecera_contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cabecera_logo {
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cabecera_titulo {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Navegación */
+.navegacion {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten cuando no caben */
+    gap: 5px;
+    justify-content: center;
+    background-color: rgba(139, 1, 1, 0.9); /* Color vino */
+    padding: 10px 0;
+    width: 80%; /* Asegura que ocupe el 100% del ancho */
+    max-width: 100%; /* Limita el ancho máximo */
+    border-radius: 10px;
+}
+.navegacion a {
+    text-decoration: none;
+    color: rgb(246, 246, 245);
+    font-weight: inherit;
+    font-size: 19px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color 0.7s ease, color 0.6s ease;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Espaciado uniforme entre los botones */
+.navegacion a:not(:first-child):not(:last-child) {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navegacion a:hover {
+    background-color: rgb(255, 248, 239);
+    color: #800000;
+}
+/* LA IMAGEN DEL CALENDARIO */
+
+.calendario_escolar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: rgb(132, 3, 3, 0.8);
+    border-radius: 20px;
+}
+
+.img_calendario {
+    width: 80%;
+    height: auto;
+    margin: 20px;
+    border: solid antiquewhite;
+    border-radius: 4px;
+}
+
+/* MENU DE BOTON DE CALENDARIO */
+.dropdown {
+    position: relative; /* Hace que el dropdown se posicione relativo a su contenedor */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(54, 53, 53, 0.8);
+    min-width: 100%;
+    max-width: 100%;
+    box-shadow: 0px 8px 16px rgba(46, 46, 46, 0.8);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 0px;
+    left: 0; /* Se ajusta al lado izquierdo del contenedor */
+    right: 0; /* Se asegura de que ocupe el ancho completo del contenedor */
+}
+
+.dropdown-content a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+}
+
+.dropdown-content, a:hover {
+    color: #e4aaaa;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(251, 251, 250);
+}
+.footer .footer_text {
+    background-color: rgba(139, 1, 1, 0.9); /* Color vino */
+    color: rgb(255, 244, 232);
+    font-size: 20px;
+    padding: 15px;
+}
+
+.redes_sociales {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes_sociales img {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.redes_sociales img:hover {
+    width: 28px;
+    background-color: #f3b8b8;
+    border-radius: 20px;
+}
+
+.mapita {
+    padding-top: 30px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map {
+    width: 70%;
+}
+/* Estilo por defecto para el ícono de toggle */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 10px; /* Ajusta según lo necesites */
+    right: 10px; /* Ajusta según lo necesites */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos cuando la ventana es menor a 768px */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar el ícono */
+        right: 10px;
+        margin-top: 90px;
+        position: relative;
+    }
+
+    .navegacion {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box; /* Evita el desbordamiento */
+    }
+
+    .navegacion a {
+        padding: 15px;
+        text-align: center;
+        width: 100%; /* Asegura que los botones ocupen todo el ancho disponible */
+        box-sizing: border-box; /* Evita el desbordamiento por padding */
+    }
+
+    .navegacion.active {
+        display: flex;
+        padding-bottom: 50px;
+    }
+
+    /* Ajuste para evitar el desbordamiento de imágenes */
+    .imagenes {
+        width: 100%; /* Asegura que las imágenes no se desborden */
+        overflow: hidden; /* Evita que se desborden */
+    }
+
+    .imagen_con_texto {
+        width: 100%; /* Asegura que las imágenes se ajusten al ancho disponible */
+        height: auto; /* Evita la distorsión */
+        object-fit: cover; /* Ajuste para que la imagen se cubra sin distorsionar */
+    }
+}
+
+/* Estilos cuando la ventana es mayor a 768px */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Ocultar el ícono en pantallas grandes */
+    }
+
+    .navegacion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+        width: 100%; /* Asegura que la navegación no se desborde */
+        box-sizing: border-box; /* Evita el desbordamiento */
+        flex-wrap: wrap; /* Asegura que los elementos se ajusten en pantallas grandes */
+    }
+    
+    /* Ajuste para las imágenes en pantallas grandes */
+    .imagenes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center; /* Asegura que las imágenes se alineen al centro */
+        width: 100%;
+    }
+
+    .imagen_con_texto {
+        width: 48%; /* Ajustar dos por fila */
+        height: auto; /* Evita distorsión de las imágenes */
+        object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsionar */
+    }
+}
+
+.menu-icon {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: auto; /* Mantén las proporciones */
+}
+
+.menu-toggle {
+    border: none; /* Opcional: elimina el borde */
+    background: none; /* Opcional: elimina el fondo */
+    padding: 0; /* Opcional: elimina el padding */
+    cursor: pointer;
+}

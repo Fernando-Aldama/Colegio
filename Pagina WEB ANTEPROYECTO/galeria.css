@@ -1,0 +1,259 @@
+/* Estilos generales (se mantiene igual) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Cabecera */
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 248, 239); /* Fondo sin color */
+    padding: 20px 0;
+    width: 100%;
+}
+
+.cabecera_contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cabecera_logo {
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cabecera_titulo {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Navegación */
+/* Navegación */
+.navegacion {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    background-color: rgba(139, 1, 1, 0.9); /* Color vino */
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    flex-wrap: wrap; /* Cambiado de 'flex: wrap' a 'flex-wrap' para funcionar correctamente */
+}
+
+/* Asegúrate de que todos los botones en el menú tengan el mismo espacio */
+.navegacion a {
+    text-decoration: none;
+    color: rgb(246, 246, 245);
+   
+    font-size: 19px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color 0.7s ease, color 0.6s ease;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Espaciado uniforme entre los botones */
+.navegacion a:not(:first-child):not(:last-child) {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.navegacion a:hover {
+    background-color: rgb(255, 248, 239);
+    color: #800000;
+}
+
+/*IMAGENES*/
+.imagenes_texto {
+    display: grid; /* Usa grid para organizar las imágenes */
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas iguales */
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px;
+}
+
+.imagen_con_texto {
+    position: relative; /* Necesario si deseas colocar texto encima de la imagen */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    aspect-ratio: 6 / 3;
+}
+
+.imagen_con_texto img {
+    width: 100%; /* Asegura que la imagen ocupe todo el espacio disponible */
+    height: 100%; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio debajo de las imágenes */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    object-fit: cover;
+}
+
+.texto_encima {
+    position: absolute; /* Para colocar texto encima de la imagen */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro con transparencia */
+    color: white; /* Color del texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+/* Footer */
+.footer {
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(251, 251, 250);
+}
+.footer .footer_text {
+    background-color: rgba(139, 1, 1, 0.9); /* Color vino */
+    color: rgb(255, 244, 232);
+    font-size: 20px;
+    padding: 15px;
+}
+
+.redes_sociales {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes_sociales img {
+    width: 30px;
+    height: 30px;
+}
+.redes_sociales img:hover{
+    background-color: rgb(243, 175, 175);
+    width: 32px;
+    border-radius: 20px;
+}
+
+.mapita {
+    padding-top: 30px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map {
+    width: 70%;
+}
+/* Dropdown */
+/*                links dentro de los botones       */
+.dropdown{
+    position: relative;
+    margin-top: 0px;
+
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(54, 53, 53, 0.8);
+    min-width: 100%;
+    max-width: 100%;
+    box-shadow: 0px 8px 16px rgba(46, 46, 46, 0.8);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 0px;
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste para centrar */
+    padding: auto;
+  }
+  .dropdown-content a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+  
+  .dropdown-content, a:hover {
+    color: #e4aaaa;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* Responsividad */
+/* Estilo por defecto para el ícono de toggle */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 10px; /* Ajusta según lo necesites */
+    right: 10px; /* Ajusta según lo necesites */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos cuando la ventana es menor a 768px */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar el ícono */
+        right: 10px;
+        margin-top: 90px;
+        position: relative;
+    }
+
+    .navegacion {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+       
+    }
+
+    .navegacion a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navegacion.active {
+        display: flex;
+        padding-bottom: 50px;
+    }
+}
+
+/* Estilos cuando la ventana es mayor a 768px */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Ocultar el ícono en pantallas grandes */
+    }
+
+    .navegacion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+}
+
+.menu-icon {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: auto; /* Mantén las proporciones */
+}
+
+.menu-toggle {
+    border: none; /* Opcional: elimina el borde */
+    background: none; /* Opcional: elimina el fondo */
+    padding: 0; /* Opcional: elimina el padding */
+    cursor: pointer;
+}
